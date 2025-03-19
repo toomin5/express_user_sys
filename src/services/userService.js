@@ -51,7 +51,8 @@ async function refreshToken(userId, refreshToken) {
     throw error;
   }
   const accessToken = createToken(user);
-  return accessToken;
+  const newRefreshToken = createToken(user, "refresh"); //리프레쉬 토큰은 두번째 인자
+  return { accessToken, newRefreshToken };
 }
 
 async function verifyPassword(inputPassword, savedpassword) {

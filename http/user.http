@@ -17,9 +17,9 @@ Content-Type: application/json
   "password":"password"
 }
 
-### 엑세스토큰재발급
+### 엑세스토큰재발급, 리프레쉬토큰재발급
 POST http://localhost:3000/token/refresh
-Cookie:
+Cookie: refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTc0MjM3Njc4NywiZXhwIjoxNzQzNTg2Mzg3fQ.46Y0YWghfWAvSyVkPt1P7omkSLktw-KqObimO0LBt8w
 
 ### 세션 기반 로그인
 POST http://localhost:3000/session-login

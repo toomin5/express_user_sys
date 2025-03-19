@@ -24,6 +24,7 @@ userController.post("/login", async (req, res, next) => {
     const refreshToken = userService.createToken(user, "refresh");
     await userService.updateUser(user.id, { refreshToken });
     res.cookie("refreshToken", refreshToken, {
+      path: "/token/refresh",
       httpOnly: true,
       sameSite: "none",
       secure: true,
@@ -39,9 +40,19 @@ userController.post(
   auth.verifyRefreshToken,
   async (req, res, next) => {
     try {
-      const { refreshToken } = req.cookies;
+      const { refreshToken } = req.cookies; //client가 전달한 리프레쉬토큰
       const { userId } = req.auth;
-      const accessToken = await userService.refreshToken(userId, refreshToken);
+      const { accessToken, newRefreshToken } = await userService.refreshToken(
+        userId,
+        refreshToken
+      );
+      await userService.updateUser(userId, { refreshToken: newRefreshToken });
+      res.cookie("refreshToken", newRefreshToken, {
+        path: "/token/refresh",
+        httpOnly: true,
+        sameSite: "none",
+        secure: true,
+      });
       return res.json({ accessToken });
     } catch (error) {
       next(error);

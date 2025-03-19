@@ -1,0 +1,9 @@
+### 상품등록
+POST http://localhost:3000/products
+Content-Type: application/json
+Cookie: connect.sid=s%3AS_nUa53wAS0Xo3ruUVt82LJ5H9znCufE.xDIJLQz26tHprboZhFZ4aa%2BN76%2F0UdjutT6sUSmf1UY; Path=/; HttpOnly
+
+{
+  "name":"iphone",
+  "price":150
+}

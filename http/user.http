@@ -1,0 +1,35 @@
+### 회원가입
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "email":"min@codeit.kr",
+  "name":"minholee",
+  "password":"password"
+}
+
+### 토큰 기반 로그인
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "email":"min@codeit.kr",
+  "password":"password"
+}
+
+### 엑세스토큰재발급
+POST http://localhost:3000/token/refresh
+Cookie:
+
+### 세션 기반 로그인
+POST http://localhost:3000/session-login
+Content-Type: application/json
+
+{
+  "email":"min@codeit.kr",
+  "password":"password"
+}
+
+### 세션 로그아웃
+POST http://localhost:3000/session-logout
+Cookie: connect.sid=s%3AIjUx4Qr4pLRGZQ3ujPBWNh3BM7TWIneG.30c1fKiXPLZks2uxbARFBbw5Mxfaur6y1K3AyppbTrA

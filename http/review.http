@@ -1,0 +1,31 @@
+### 리뷰 생성
+POST http://localhost:3000/reviews
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTc0MjM3NDg5NCwiZXhwIjoxNzQyMzc4NDk0fQ.PeW_Ufe5lOyQ0_y-eSY_BVDugP12QFzW2cak1KEi-eA
+
+{
+  "title":"great pro",
+  "description": "very good",
+  "rating": 5,
+  "productId": 1,
+  "authorId": 6
+}
+
+### 리뷰 
+GET http://localhost:3000/reviews
+
+###
+PUT http://localhost:3000/reviews/2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTc0MjM2ODE1OCwiZXhwIjoxNzQyMzcxNzU4fQ.rC1OoRRVFgXLvBSkISEpvB5UV0EgDlvDt0NgXAF5qDQ
+
+{
+  "title":"great pro",
+  "description": "very good",
+  "rating": 10
+}
+
+###
+DELETE http://localhost:3000/reviews/2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTc0MjM2ODE1OCwiZXhwIjoxNzQyMzcxNzU4fQ.rC1OoRRVFgXLvBSkISEpvB5UV0EgDlvDt0NgXAF5qDQ

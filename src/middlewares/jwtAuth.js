@@ -11,6 +11,7 @@ const verifyRefreshToken = expressjwt({
   secret: process.env.JWT_SECRET,
   algorithms: ["HS256"],
   getToken: (req) => req.cookies.refreshToken,
+  // req.auth 객체에 할당
 });
 
 async function verifyReview(req, res, next) {
